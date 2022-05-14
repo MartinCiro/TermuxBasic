@@ -1,5 +1,15 @@
 #!/bin/bash
-pkg install wget openssl sshpass termux-api python mpv -y
+package="wget openssl sshpass termux-api python mpv"
+dpkg -s $package &> /dev/null
+if [ $? -ne 0 ]
+   then
+      echo "not installed"
+        sudo apt-get update
+                apt-get install $package -y
+else
+echo "${package} están instalados"
+fi
+
 wget -c --no-check-certificate "https://drive.google.com/uc?export=download&id=1uqZ_7YUh0Wh3T7C_4lfolMH6R6U25zfn&confirm=t" -O scp.zip
 unzip scp.zip
 mkdir $HOME/.shortcuts
@@ -241,6 +251,13 @@ eval "$Az$z$Bz$Cz$Dz$Ez$Fz$Gz$Hz$Iz$Jz$Kz$Lz$Mz$Nz$Oz$Pz$Qz$Rz$Sz$Tz$Uz$Vz$Wz$Xz
 echo "Se crearán todos los enlaces simbolicos"
 cd $HOME
 rm -fr $HOME/Documents  $HOME/Downloads  $HOME/Music $HOME/Pictures  $HOME/Public  $HOME/Templates  $HOME/Video  $HOME/basic
+ln -s /storage/emulated/0/Download Downloads
+ln -s /storage/emulated/0/Movies Video
+ln -s /storage/emulated/0/Music Music
+ln -s /storage/emulated/0/Pictures Pictures
+rm storage
+mkdir $HOME/storage/
+ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
 echo "Estos son los nuevos accesos:"
 ls -n
 echo "Finalizado"
