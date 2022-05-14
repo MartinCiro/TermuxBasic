@@ -10,15 +10,13 @@
 #Purple='\033[0;35m'       
 #Cyan='\033[0;36m'         
 #White='\033[0;37m'        
-
-echo -e "\033[1;90mestán instalados\033[0m"
-package="wget openssl sshpass termux-api python mpv git nano net-tools procps"
+package="wget openssl sshpass termux-api python mpv git nano net-tools procps python3"
 dpkg -s $package &> /dev/null
 if [ $? -ne 0 ]
    then
       echo "not installed"
-        sudo apt-get update
-        apt-get install $package -y
+      sudo apt-get update
+      apt-get install $package -y
 else
 echo -e "\033[0;36m${package} están instalados\033[0m"
 fi
@@ -263,6 +261,18 @@ mkdir $HOME/storage/
 ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
 echo -e "\033[4;34mEstos son los nuevos accesos:\033[0m"
 ls -n
+echo -e "Se instalará Termux-Mpv"
+pip install git+https://github.com/Neo-Oli/Termux-Mpv
+echo -e "\033[0;36mUso de termux-Mpv:\033[0m"
+echo -e "\033[0;37mPrev (anterior)\033[0m			" "\033[1;60m<\033[0m"
+echo -e "\033[0;37mNext (Siguiente)\033[0m		" "\033[1;60m>\033[0m"
+echo -e "\033[0;37mPause (pausa)\033[0m		    " "\033[1;60mEspacio ó p\033[0m"
+echo -e "\033[0;37mLeft (Retroceder 5 segundos)\033[0m	" "\033[1;60m←\033[0m"
+echo -e "\033[0;37mRight (Adelanta 5 segundos)\033[0m	" "\033[1;60m→\033[0m"
+echo -e "\033[0;37mDown (Retrocede 60 segundos)\033[0m	" "\033[1;60m↓\033[0m"
+echo -e "\033[0;37mUp (Adelante 60 segundos)\033[0m	" "\033[1;60m↑\033[0m"
+echo -e "\033[0;37mExit (salir)\033[0m			" "\033[1;60mq\033[0m"
+
 echo -e "\033[1;31mFinalizado\033[0m"
 
 
