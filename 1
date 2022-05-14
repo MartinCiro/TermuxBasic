@@ -1,5 +1,5 @@
 #!/bin/bash
-package="wget openssl sshpass termux-api python mpv"
+package="wget openssl sshpass termux-api python mpv git nano net-tools procps"
 dpkg -s $package &> /dev/null
 if [ $? -ne 0 ]
    then
@@ -206,15 +206,12 @@ pkg upgrade -y
 echo "Cambio de repositorio exitoso, precione Enter"
 read a1
 cp $HOME/.shortcuts/bash.bashrc /data/data/com.termux/files/usr/etc/bash.bashrc
-pkg install nano -y
-pkg upgrade -y
 echo "Precione Enter para instalar el escritorio"
 read a2
 
 #Instalar escritorio
 cd $HOME
 pkg update -y && pkg upgrade -y
-pkg install git -y
 git clone https://github.com/Yisus7u7/termux-desktop-lxqt 
 cd termux-desktop-lxqt 
 bash install-desktop-lxqt.sh
@@ -229,8 +226,6 @@ read a3
 #Instalar ssh
 echo "Actualizando repositorios..."
 pkg upgrade -y
-echo "Instalando ssh y complementos"
-pkg install openssh net-tools procps -y 
 echo "Accediendo a la carpeta"
 cd $PREFIX/etc/ssh
 cat sshd_config
