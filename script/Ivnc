@@ -1,0 +1,6 @@
+#!/bin/bash
+vncserver
+echo "start server running."
+echo "press Enter to terminate."
+read continue
+vncserver -kill :1
