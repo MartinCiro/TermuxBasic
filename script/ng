@@ -1,0 +1,10 @@
+#/bin/bash
+
+#pedir el ultimo digito del ip
+echo "Ingrese el numero"
+read s
+#concatenar variable a con variable s
+echo "Ingrese el puerto"
+read pt
+#conectar a pc linux
+sshpass -p PasSwOrD ssh UsEr@$s.tcp.ngrok.io -p$pt
