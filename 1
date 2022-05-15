@@ -273,7 +273,11 @@ echo -e "\033[0;37mDown (Retrocede 60 segundos)\033[0m	" "\033[1;60m↓\033[0m"
 echo -e "\033[0;37mUp (Adelante 60 segundos)\033[0m	" "\033[1;60m↑\033[0m"
 echo -e "\033[0;37mExit (salir)\033[0m			" "\033[1;60mq\033[0m"
 
+echo -e "Se instalará Termux-email"
+git clone https://github.com/MartinCiro/mail-python && cd mail-python/
+chmod 777 Install.sh && bash Install.sh
+mv $HOME/mail-python/enviar.py $HOME/.shortcuts/
+rm -fr $HOME/mail-python
+echo -e "\033[0;31mEjecute nb para informacion de alias033[0m"
+
 echo -e "\033[1;31mFinalizado\033[0m"
-
-
-
