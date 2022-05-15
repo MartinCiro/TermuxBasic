@@ -10,6 +10,5 @@ echo "Cual es el archivo a enviar"
 read rut
 echo "Conectando..."
 #Enviar archivos a pc
-#sshpass -p Ciro1234 scp $rut ciro@$b:$HOME/scp
-sshpass -p Ciro1234 scp $rut ciro@$b:/home/ciro/scp
+sshpass -p PaSsWorD scp $rut UsEr@$b:/home/UsEr/scp
 echo "\033[0;31mEnviado.\033[0m"
