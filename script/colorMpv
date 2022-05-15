@@ -1,0 +1,26 @@
+echo "\033[1;36m _________________________________\033[0m"
+echo "\033[1;36m|\033[0mPrev (anterior)		" "\033[1;60m<\033[0m\033[1;36m|\033[0m"
+echo "\033[1;36m|\033[0mNext (Siguiente)		" "\033[1;60m>\033[0m\033[1;36m|\033[0m"
+echo "\033[1;36m|\033[0mPause (pausa)	      " "\033[1;60mEspacio ó p\033[0m\033[1;36m|\033[0m"
+echo "\033[1;36m|\033[0mLeft (Retroceder 5 segundos)	" "\033[1;60m←\033[0m\033[1;36m|\033[0m"
+echo "\033[1;36m|\033[0mRight (Adelanta 5 segundos)	" "\033[1;60m→\033[0m\033[1;36m|\033[0m"
+echo "\033[1;36m|\033[0mDown (Retrocede 60 segundos)	" "\033[1;60m↓\033[0m\033[1;36m|\033[0m"
+echo "\033[1;36m|\033[0mUp (Adelante 60 segundos)\	" "\033[1;60m↑\033[0m\033[1;36m|\033[0m"
+echo "\033[1;36m|\033[0mExit (salir)			" "\033[1;60mq\033[0m\033[1;36m|\033[0m"
+echo "\033[1;36m ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\033[0m"
+<< 'asd' 
+https://drive.google.com/file/d/1tIO3amJwRbyP1r1AbWINTszp6u7Fh1J3/view?usp=sharing
+#wget -O "termux-widget.apk" -c --no-check-certificate "https://drive.google.com/uc?export=download&id=1tIO3amJwRbyP1r1AbWINTszp6u7Fh1J3&confirm=t"
+am start --user 0 -a android.intent.action.VIEW -d 'https://drive.google.com/uc?export=download&id=1uqZ_7YUh0Wh3T7C_4lfolMH6R6U25zfn&confirm=t'
+am to-uri Manifest.permission.REQUEST_INSTALL_PACKAGES termux-widget.apk
+am to-intent-uri Manifest.permission.REQUEST_INSTALL_PACKAGES termux-widget.apk
+am to-app-uri Manifest.permission.REQUEST_INSTALL_PACKAGES termux-widget.apk
+installIntent.setData(Uri.parse("file:<apk file location>"))
+am start --user 0 -a android.intent.action.VIEW -d 'https://drive.google.com/uc?export=download&id=1uqZ_7YUh0Wh3T7C_4lfolMH6R6U25zfn&confirm=t'
+am start --user 0 -a android.intent.action.VIEW -d installIntent.setData(Uri.parse("file:$HOME/termux-widget.apk"))
+
+android.os.FileUriExposedException: file:///storage/emulated/0/Android/data/Project.Title/files/App.apk exposed beyond app through Intent.getData()
+am start --user 0 -a android.os.FileUriExposedException: file:///storage/emulated/0/Android/data/Project.Title/files/App.apk exposed beyond app through Intent.getData()
+
+/data/data/com.termux/files/usr <-Prefix
+asd
