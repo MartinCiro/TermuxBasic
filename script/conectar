@@ -1,12 +1,12 @@
 #!/bin/bash
-
 a=192.168.0.
 #pedir el ultimo digito del ip
-echo "numero" 
-read s
-#concatenar variable a con variable s
-b=$a$s
-echo "Conectando..."
-echo "ingrese la contraseña"
-#conectar a pc linux
-sshpass -p PaSsWoRd ssh UsEr@$b
+i=1
+while [ "$i" -le 10 ]; do
+    b=$a$i
+    echo "Conectando..."
+    #conectar a pc linux
+    i=$(( i + 1 ))
+    sshpass -p PaSsWoRd ssh UsEr@$b
+    clear
+done
