@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Exec=vncserver -kill :1
+Icon=system-shutdown
+Categories=System;X-Leave;
+OnlyShowIn=LXQt;
+Name[es]=Apagar
+GenericName[es]=Apagar el sistema
+Comment[es]=Apagar el sistema
+Name=Shutdown
+GenericName=Shutdown the machine
+Comment=Shutdown the machine
