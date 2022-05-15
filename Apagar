@@ -1,0 +1,1 @@
+net RPC SHUTDOWN -I 192.168.0.7 -U admin%1234 -f -t 120
