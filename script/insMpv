@@ -1,0 +1,9 @@
+#!/bin/bash
+echo -e "\033[0;37mPrev (anterior)\033[0m			" "\033[1;60m<\033[0m"
+echo -e "\033[0;37mNext (Siguiente)\033[0m		" "\033[1;60m>\033[0m"
+echo -e "\033[0;37mPause (pausa)\033[0m		    " "\033[1;60mEspacio ó p\033[0m"
+echo -e "\033[0;37mLeft (Retroceder 5 segundos)\033[0m	" "\033[1;60m←\033[0m"
+echo -e "\033[0;37mRight (Adelanta 5 segundos)\033[0m	" "\033[1;60m→\033[0m"
+echo -e "\033[0;37mDown (Retrocede 60 segundos)\033[0m	" "\033[1;60m↓\033[0m"
+echo -e "\033[0;37mUp (Adelante 60 segundos)\033[0m	" "\033[1;60m↑\033[0m"
+echo -e "\033[0;37mExit (salir)\033[0m			" "\033[1;60mq\033[0m"
