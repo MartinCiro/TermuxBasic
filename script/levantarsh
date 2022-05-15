@@ -1,0 +1,6 @@
+#!/bin/bash
+sshd
+echo SSH server running.
+echo press Enter to terminate.
+read continue
+pkill sshd
