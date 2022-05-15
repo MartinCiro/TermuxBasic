@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "URL"
+read URL
+ext=".mkv"
+name="video1"
+names=$name$ext
+youtube-dl -f best $URL -o $names --username CorreoFacebook --password ContraseñaFacebook
+ffmpeg -i $names -c:v libx264 -c:a aac "${name}.mp4"
+rm $names
+echo "precione una tecla para compartir"
+read jj
+termux-open --send "${name}.mp4"
+echo "Precione una tecla para eliminar el video"
+read si
+rm "${name}.mp4"
