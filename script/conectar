@@ -9,4 +9,4 @@ b=$a$s
 echo "Conectando..."
 echo "ingrese la contraseña"
 #conectar a pc linux
-sshpass -p Ciro1234 ssh ciro@$b
+sshpass -p PaSsWoRd ssh UsEr@$b
