@@ -1,0 +1,25 @@
+#!/bin/bash
+cd $HOME/Downloads
+#cd $HOME/storage/downloads
+echo "Dame el URL"
+read URL
+echo "Para conservar precione m"
+read opcion
+ext=".mkv"
+if [ $opcion == "m" ]
+   then
+      echo "El video se llamará video1"
+      name="video1"
+else
+echo "¿Qué nombre desea ponerle?"
+read name
+fi
+names=$name$ext
+curl -o $names $URL
+#ffmpeg -i $names -codec copy "${name}.mp4"
+ffmpeg -i $names -c:v libx264 -c:a aac "${name}.mp4"
+rm $names
+termux-open --send "${name}.mp4"
+echo "Precione una tecla para eliminar el video"
+read si
+rm "${name}.mp4"
