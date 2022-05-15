@@ -1,6 +1,6 @@
 #/bin/bash
 
-#pedir el ultimo digito del ip
+#pedir el numero tcp tcp://2
 echo "Ingrese el numero"
 read s
 #concatenar variable a con variable s
