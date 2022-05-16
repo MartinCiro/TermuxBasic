@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 $HOME/.shortcuts/enviar.py
+python $HOME/.shortcuts/enviar.py
