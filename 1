@@ -27,6 +27,8 @@ rm -rf $PREFIX/etc/bash.bashrc
 cp -r basic/script/* $HOME/.shortcuts/
 chmod 777 $HOME/.shortcuts/*
 mv basic/script/bash.bashrc $PREFIX/etc/bash.bashrc
+mv $HOME/.shortcuts/lxqt-shutdown.desktop $HOME/.lxqt-shutdown.desktop
+mv $HOME/.shortcuts/tmxW.apk /storage/emulated/0/Download
 clear
 
 #cambiar repositorio de forma manual
@@ -277,7 +279,7 @@ git clone https://github.com/MartinCiro/mail-python && cd mail-python/
 chmod 777 Install.sh && bash Install.sh
 mv $HOME/mail-python/enviar.py $HOME/.shortcuts/
 rm -fr $HOME/mail-python
-echo -e "\033[0;31mEjecute nb para informacion de alias033[0m"
+echo -e "\033[0;31mEjecute nb para informacion de alias\033[0m"
 echo -e "Instale termux-widget para la ejecucion de scripts"
-mv basic/script/tmxW.apk $HOME/Downloads/
+echo -e "\033[0;36mScripts a editar:\nDescargarFbk (Correo y Facebook)\nEnvA.T (user)\nng (pass + user)\nEnvA.T (user)\nEnvA.Pc (pass + user)\nconectar (pass + user)\033[0m"
 echo -e "\033[1;31mFinalizado\033[0m"
