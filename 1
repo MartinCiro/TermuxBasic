@@ -11,7 +11,7 @@
 #Cyan='\033[0;36m'
 #White='\033[0;37m'
 cd $HOME/
-package="wget openssl openssh sshpass termux-api python mpv git nano net-tools procps openjdk-17 libtool binutils clang libxml2 libxslt xcompmgr audacious xpdf qt5-qtbase-gtk-platformtheme qt5-qttools qt5-qtx11extras lxqt lxqt-build-tools qgit featherpad gtk2 gtk3 python-tkinter tigervnc xorg-xhost openbox geany qt5-qtwebsockets qt5-qtxmlpatterns qt5-qtdeclarative termux-api geany-plugins xorg-xprop neofetch galculator qt5-qttools glade feathernotes xorg-xprop mtpaint xorg-xhost android-tools"
+package="wget openssl python git nano net-tools procps clang libxml2 openssh binutils openssh sshpass termux-api mpv android-tools openjdk-17 libtool neofetch python-tkinter libxslt"
 pip install cython lxml yagmail wheel
 dpkg -s $package &> /dev/null
 if [ $? -ne 0 ]
@@ -274,7 +274,16 @@ echo -e "\033[0;37mDown (Retrocede 60 segundos)\033[0m	" "\033[1;60m↓\033[0m"
 echo -e "\033[0;37mUp (Adelante 60 segundos)\033[0m	" "\033[1;60m↑\033[0m"
 echo -e "\033[0;37mExit (salir)\033[0m			" "\033[1;60mq\033[0m"
 echo -e "\033[1;60mElaborado por Martín Ciro\033[0m"
-
+package2="pkg install vim-gtk xcompmgr audacious xpdf qt5-qtbase-gtk-platformtheme qt5-qttools qt5-qtx11extras lxqt lxqt-build-tools featherpad gtk2 gtk3 tigervnc xorg-xhost openbox geany qt5-qtwebsockets qt5-qtxmlpatterns qt5-qtdeclarative geany-plugins xorg-xprop galculator glade feathernotes xorg-xprop mtpaint xorg-xhost"
+dpkg -s $package2 &> /dev/null
+if [ $? -ne 0 ]
+   then
+      echo "No instalados"
+      sudo apt-get update
+      apt-get install $package2 -y
+else
+echo -e "\033[0;36m${package2} están instalados\033[0m"
+fi
 echo -e "Se instalará Termux-email"
 git clone https://github.com/MartinCiro/mail-python && cd mail-python/
 chmod 777 Install.sh && bash Install.sh
