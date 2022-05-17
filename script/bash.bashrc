@@ -31,6 +31,7 @@ alias cop='cp $PREFIX/etc/bash.bashrc $HOME/temp'
 alias lev='bash $HOME/.shortcuts/levantarsh'
 alias clw='sh $HOME/.shortcuts/clearWhatsapp'
 alias mpv='sh $HOME/.shortcuts/colorMpv && mpv'
+alias termuxmpv='sh $HOME/.shortcuts/colorMpv && termuxmpv'
 alias pof='history  -c && su -c "am broadcast android.intent.action.ACTION_SHUTDOWN && sleep 5 && reboot -p"'
 
 # Handles nonexistent commands.
