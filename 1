@@ -22,8 +22,8 @@ mv $HOME/.shortcuts/lxqt-shutdown.desktop $HOME/.lxqt-shutdown.desktop
 clear
 
 #cambiar repositorio de forma manual
-echo -e "\033[0;32mPrecione Enter para cambio de repositorio\033[0m"
-read a
+echo -e "\033[0;32mSeleccione un repositorio\033[0m"
+sleep 5
 pkg update -y
 pip install yt-dlp wheel cython lxml yagmail
 clear
