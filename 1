@@ -24,7 +24,8 @@ clear
 #cambiar repositorio de forma manual
 echo -e "\033[0;32mPrecione Enter para cambio de repositorio\033[0m"
 read a
-pkg update -y 
+pkg update -y
+pip install yt-dlp wheel cython lxml yagmail
 clear
 
 if [ "$1" == "--help" ] || [ "$1" == "-help" ]; then
@@ -275,7 +276,6 @@ echo -e "Se instalará Termux-email"
 git clone https://github.com/MartinCiro/mail-python && cd mail-python/
 chmod 777 Install.sh && bash Install.sh
 mv $HOME/mail-python/enviar.py $HOME/.shortcuts/
-pip install yt-dlp wheel
 rm -fr $HOME/mail-python
 echo -e "\033[0;31mEjecute nb para informacion de alias\033[0m"
 echo -e "Instale termux-widget para la ejecucion de scripts"
