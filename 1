@@ -264,12 +264,12 @@ echo -e "\033[0;37mDown (Retrocede 60 segundos)\033[0m	" "\033[1;60m↓\033[0m"
 echo -e "\033[0;37mUp (Adelante 60 segundos)\033[0m	" "\033[1;60m↑\033[0m"
 echo -e "\033[0;37mExit (salir)\033[0m			" "\033[1;60mq\033[0m"
 echo -e "\033[1;60mElaborado por Martín Ciro\033[0m"
-package2="pkg install vim-gtk xcompmgr audacious xpdf qt5-qtbase-gtk-platformtheme qt5-qttools qt5-qtx11extras lxqt lxqt-build-tools featherpad gtk2 gtk3 tigervnc xorg-xhost openbox geany qt5-qtwebsockets qt5-qtxmlpatterns qt5-qtdeclarative geany-plugins xorg-xprop galculator glade feathernotes xorg-xprop mtpaint xorg-xhost"
+package2="vim-gtk xcompmgr audacious xpdf qt5-qtbase-gtk-platformtheme qt5-qttools qt5-qtx11extras lxqt lxqt-build-tools featherpad gtk2 gtk3 tigervnc xorg-xhost openbox geany qt5-qtwebsockets qt5-qtxmlpatterns qt5-qtdeclarative geany-plugins xorg-xprop galculator glade feathernotes xorg-xprop mtpaint xorg-xhost"
 dpkg -s $package2 &> /dev/null
 if [ $? -ne 0 ]
    then
       echo "No instalados"
-      sudo apt-get update
+      apt-get update
       apt-get install $package2 -y
 else
 echo -e "\033[0;36m${package2} están instalados\033[0m"
