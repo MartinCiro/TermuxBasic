@@ -23,7 +23,8 @@ mv $HOME/.shortcuts/lxqt-shutdown.desktop $HOME/.lxqt-shutdown.desktop
 clear
 
 pkg update -y > /dev/null 2>&1
-pip install yt-dlp wheel cython lxml yagmail wakeonlan
+echo "Estoy instalando paquetes de python"
+pip install yt-dlp wheel cython lxml yagmail wakeonlan > /dev/null 2>&1
 $PREFIX/bin/python3 -m pip install --upgrade pip
 clear
 
@@ -220,7 +221,7 @@ cd $HOME
 clear
 
 #Configurar ssh
-echo "Accediendo a la carpeta"
+echo "Accediendo a la carpeta\033[0m"
 cat $PREFIX/etc/ssh/sshd_config
 echo "Iniciando sshd"
 sshd
@@ -241,7 +242,8 @@ clear
 
 echo -e "\033[1;60mSe crearán todos los enlaces simbolicos\033[0m"
 cd $HOME
-rm -fr $HOME/Documents  $HOME/Downloads  $HOME/Music $HOME/Pictures  $HOME/Public  $HOME/Templates  $HOME/Video  $HOME/basic
+unlink $HOME/Music
+rm -fr $HOME/Documents  $HOME/Downloads $HOME/Pictures  $HOME/Public  $HOME/Templates  $HOME/Video  $HOME/basic
 ln -s /storage/emulated/0/Download Downloads
 ln -s /storage/emulated/0/Movies Video
 ln -s /storage/emulated/0/Music Music
