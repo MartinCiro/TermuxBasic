@@ -1,7 +1,8 @@
 #!/bin/bash
 rm $HOME/Downloads/"video1.mp4" > /dev/null 2>&1
-echo "URL"
+echo -e "\033[0;34mURL\033[0m"
 read URL
+echo "Ok, descargando"
 ext=".mkv"
 name="video1"
 user="AquíCorreoFacebook"
@@ -22,9 +23,10 @@ asd
 yt-dlp -f b $URL -o $names --username $user --password $pass > /dev/null 2>&1
 ffmpeg -i $names -c:v libx264 -c:a aac "${name}.mp4" > /dev/null 2>&1
 rm $names
-echo "precione una tecla para compartir"
+echo -e "\033[0;35mPrecione una tecla para compartir\033[0m"
 read jj
 termux-open --send $HOME/Downloads/"${name}.mp4"
 echo "Precione una tecla para eliminar el video"
 read si
 rm $HOME/Downloads/"${name}.mp4"
+echo -e "\033[0;31mFinalizado"
