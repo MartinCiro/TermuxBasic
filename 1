@@ -22,13 +22,12 @@ mv $HOME/.shortcuts/bash.bashrc $PREFIX/etc/bash.bashrc
 mv $HOME/.shortcuts/lxqt-shutdown.desktop $HOME/.lxqt-shutdown.desktop
 clear
 
-#cambiar repositorio de forma manual
-echo -e "\033[0;32mSeleccione un repositorio\033[0m"
-sleep 5
 pkg update -y > /dev/null 2>&1
 pip install yt-dlp wheel cython lxml yagmail wakeonlan -U > /dev/null 2>&1
 clear
 
+#cambiar repositorio de forma manual
+echo -e "\033[0;32mSeleccione un repositorio\033[0m"
 if [ "$1" == "--help" ] || [ "$1" == "-help" ]; then
     echo "Script for redirecting subscribed repositories to mirrors."
     echo "You can choose between mirrors listed at"
@@ -202,18 +201,18 @@ case $retval in
         ;;
 esac
 rm "$TEMPFILE"
-pkg update -y
-pkg upgrade -y
-echo -e "\033[0;36mCambio de repositorio exitoso, precione Enter\033[0m"
-read a1
+pkg update -y > /dev/null 2>&1
+pkg upgrade -y > /dev/null 2>&1
 clear
 
 #Instalar escritorio
 echo -e "\033[0;35mInstalando escritorio Por favor espere...\033[0m"
 cd $HOME
-pkg update -y && pkg upgrade -y
-git clone https://github.com/Yisus7u7/termux-desktop-lxqt 
+pkg update -y > /dev/null 2>&1 && pkg upgrade -y > /dev/null 2>&1
+git clone https://github.com/Yisus7u7/termux-desktop-lxqt > /dev/null 2>&1
 cd termux-desktop-lxqt 
+echo "prueba"
+read d
 bash install-desktop-lxqt.sh
 git pull
 cd $HOME
