@@ -4,11 +4,13 @@ a=192.168.0.
 #pedir el ultimo digito del ip
 echo "numero" 
 read s
+echo "Puerto (opcional)"
 #concatenar variable a con variable s
 b=$a$s
 echo "Cual es el archivo a enviar"
 read rut
 echo "Conectando..."
 #Enviar archivos a pc
-sshpass -p PaSsWorD scp $rut UsEr@$b:/home/UsEr/scp
+sshpass -p PaSsWorD scp $rut UsEr@$b:/home/UsEr/
+sshpass -p PaSsWorD scp $rut UsEr@$s.tcp.ngrok.io -p $p:/home/UsEr/
 echo "\033[0;31mEnviado.\033[0m"
