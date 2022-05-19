@@ -1,15 +1,30 @@
 #!/bin/bash
+rm $HOME/Downloads/"video1.mp4" > /dev/null 2>&1
 echo "URL"
 read URL
 ext=".mkv"
 name="video1"
+user="AquíCorreoFacebook"
+pass="AquíPassdeFacebook"
 names=$name$ext
-youtube-dl -f best $URL -o $names --username CorreoFacebook --password ContraseñaFacebook
-ffmpeg -i $names -c:v libx264 -c:a aac "${name}.mp4"
+cd $HOME/Downloads/
+#Descomentar estas lineas en caso de querer nombrar los videos diferente
+<< asd 
+if [ $opcion == "m" ]
+   then
+      echo "El video se llamará video1"
+      name="video1"
+else
+echo "¿Qué nombre desea ponerle?"
+read name
+fi
+asd
+yt-dlp -f b $URL -o $names --username $user --password $pass > /dev/null 2>&1
+ffmpeg -i $names -c:v libx264 -c:a aac "${name}.mp4" > /dev/null 2>&1
 rm $names
 echo "precione una tecla para compartir"
 read jj
-termux-open --send "${name}.mp4"
+termux-open --send $HOME/Downloads/"${name}.mp4"
 echo "Precione una tecla para eliminar el video"
 read si
-rm "${name}.mp4"
+rm $HOME/Downloads/"${name}.mp4"
