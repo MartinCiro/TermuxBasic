@@ -24,6 +24,7 @@ clear
 
 pkg update -y > /dev/null 2>&1
 pip install yt-dlp wheel cython lxml yagmail wakeonlan
+$PREFIX/bin/python3 -m pip install --upgrade pip
 clear
 
 #cambiar repositorio de forma manual
@@ -284,6 +285,7 @@ git clone https://github.com/MartinCiro/mail-python > /dev/null 2>&1 && cd mail-
 chmod 777 Install.sh && bash Install.sh
 mv $HOME/mail-python/enviar.py $HOME/.shortcuts/
 rm -fr $HOME/mail-python
+$PREFIX/bin/python3 -m pip install --upgrade pip > /dev/null 2>&1
 clear
 
 echo -e "\033[0;31mEjecute nb para informacion de alias\033[0m"
