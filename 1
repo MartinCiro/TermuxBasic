@@ -218,9 +218,8 @@ cd $HOME
 clear
 
 #Configurar ssh
-echo "Accediendo a la carpeta\033[0m"
-cat $PREFIX/etc/ssh/sshd_config
-echo "Iniciando sshd"
+cat $PREFIX/etc/ssh/sshd_config > /dev/null 2>&1
+echo "Se configuró ssh:"
 sshd
 whoami
 echo -e "\033[0;31mAnote este usuario y precione enter\033[0m"
@@ -281,7 +280,7 @@ clear
 
 echo -e "Se instalará Termux-email"
 git clone https://github.com/MartinCiro/mail-python > /dev/null 2>&1 && cd mail-python/
-chmod 777 Install.sh && bash Install.sh
+chmod 777 Install.sh && bash Install.sh > /dev/null 2>&1
 mv $HOME/mail-python/enviar.py $HOME/.shortcuts/
 rm -fr $HOME/mail-python
 $PREFIX/bin/python3 -m pip install --upgrade pip > /dev/null 2>&1
