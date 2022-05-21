@@ -24,7 +24,7 @@ mv $HOME/.shortcuts/lxqt-shutdown.desktop $HOME/.lxqt-shutdown.desktop
 pkg update -y > /dev/null 2>&1
 echo "Estoy instalando paquetes de python"
 pip install yt-dlp wheel cython lxml yagmail wakeonlan > /dev/null 2>&1
-$PREFIX/bin/python3 -m pip install --upgrade pip
+$PREFIX/bin/python3 -m pip install --upgrade pip > /dev/null 2>&1
 clear
 
 #cambiar repositorio de forma manual
