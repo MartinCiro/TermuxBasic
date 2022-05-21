@@ -215,7 +215,6 @@ cd termux-desktop-lxqt
 bash install-desktop-lxqt.sh
 git pull
 cd $HOME
-clear
 
 #Configurar ssh
 cat $PREFIX/etc/ssh/sshd_config > /dev/null 2>&1
@@ -226,7 +225,6 @@ echo -e "\033[0;31mAnote este usuario y precione enter\033[0m"
 read a
 echo -e "\033[0;36mIngrese la nueva contraseña\033[0m"
 passwd
-clear
 
 #Instalar audio vnc-server
 pkg install pulseaudio -y > /dev/null 2>&1
@@ -276,7 +274,6 @@ if [ $? -ne 0 ]
 else
 echo -e "\033[0;36m${package2} están instalados\033[0m"
 fi
-clear
 
 echo -e "Se instalará Termux-email"
 git clone https://github.com/MartinCiro/mail-python > /dev/null 2>&1 && cd mail-python/
