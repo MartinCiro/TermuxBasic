@@ -20,7 +20,6 @@ cp -r basic/script/* $HOME/.shortcuts/
 chmod 777 $HOME/.shortcuts/*
 mv $HOME/.shortcuts/bash.bashrc $PREFIX/etc/bash.bashrc
 mv $HOME/.shortcuts/lxqt-shutdown.desktop $HOME/.lxqt-shutdown.desktop
-clear
 
 pkg update -y > /dev/null 2>&1
 echo "Estoy instalando paquetes de python"
@@ -213,8 +212,6 @@ cd $HOME
 pkg update -y > /dev/null 2>&1 && pkg upgrade -y > /dev/null 2>&1
 git clone https://github.com/Yisus7u7/termux-desktop-lxqt > /dev/null 2>&1
 cd termux-desktop-lxqt 
-echo "prueba"
-read d
 bash install-desktop-lxqt.sh
 git pull
 cd $HOME
@@ -274,7 +271,7 @@ package2="vim-gtk xcompmgr audacious xpdf qt5-qtbase-gtk-platformtheme qt5-qttoo
 dpkg -s $package2 &> /dev/null
 if [ $? -ne 0 ]
    then
-      echo "No instalados"
+      echo "No están instalados, instalando..."
       apt-get update -y > /dev/null 2>&1
       apt-get install $package2 -y > /dev/null 2>&1
 else
