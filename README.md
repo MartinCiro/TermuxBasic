@@ -2,7 +2,7 @@
 Esta es la Instalacion basica que hago cada vez al instalar termux, todos mis archivos estan guardados en la nube de google drive
 
 # Instalacion
-pkg remove game-repo science-repo -y && termux-change-repo && pkg update -n || pkg install git -y > /dev/null 2>&1 && clear
+pkg remove game-repo science-repo -y && termux-change-repo && pkg update -n > /dev/null 2>&1 || pkg install git -y > /dev/null 2>&1 && clear
 
 history -c && git clone https://github.com/MartinCiro/basic/ && cd basic && chmod 777 1 && clear && bash 1 && exit
 
