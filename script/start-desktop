@@ -8,7 +8,7 @@ rm -rf $PREFIX/share/applications/lxqt-lockscreen.desktop
 rm -rf $PREFIX/share/applications/lxqt-leave.desktop
 
 cp $HOME/.lxqt-shutdown.desktop $PREFIX/share/applications/lxqt-shutdown.desktop
-cp $HOME/.lxqt-shutdown.desktop $PREFIX/share/applications/lxqt-reboot.desktop
+cp $HOME/.lxqt-reboot.desktop $PREFIX/share/applications/lxqt-reboot.desktop
 vncserver -listen tcp
 vncserver -list
 termux-open vnc://127.0.0.1:5901
