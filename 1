@@ -239,6 +239,7 @@ clear
 
 echo -e "\033[1;60mSe crearán todos los enlaces simbolicos\033[0m"
 cd $HOME
+mkdir temp
 unlink $HOME/Music
 rm -fr $HOME/Documents  $HOME/Downloads $HOME/Pictures  $HOME/Public  $HOME/Templates  $HOME/Video  $HOME/basic
 ln -s /storage/emulated/0/Download Downloads
