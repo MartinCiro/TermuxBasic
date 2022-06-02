@@ -7,6 +7,8 @@ while [ "$i" -le 10 ]; do
     echo "Conectando..."
     #conectar a pc linux
     i=$(( i + 1 ))
+    ssh-keygen -f "~/.ssh/known_hosts2" -R "[${b}]"
     sshpass -p PaSsWoRd ssh UsEr@$b
+    ssh UsEr@$b
     clear
 done
