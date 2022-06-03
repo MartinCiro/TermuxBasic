@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=stop-desktop
+Exec=bash stop-desktop
 Icon=system-shutdown
 Categories=System;X-Leave;
 OnlyShowIn=LXQt;
