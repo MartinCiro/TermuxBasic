@@ -19,9 +19,13 @@ mkdir $HOME/.shortcuts
 rm -rf $PREFIX/etc/bash.bashrc
 cp -r TermuxBasic/script/* $HOME/.shortcuts/
 chmod 777 $HOME/.shortcuts/*
+mkdir $HOME/.hid
+mv $HOME/.shortcuts/int $HOME/.hid/int
+mv $HOME/.shortcuts/ext $HOME/.hid/ext
+mv $HOME/.shortcuts/lxqt-shutdown.desktop $HOME/.hid/.lxqt-shutdown.desktop
+mv $HOME/.shortcuts/lxqt-reboot.desktop $HOME/.hid/lxqt-reboot.desktop
+
 mv $HOME/.shortcuts/bash.bashrc $PREFIX/etc/bash.bashrc
-mv $HOME/.shortcuts/lxqt-shutdown.desktop $HOME/.lxqt-shutdown.desktop
-mv $HOME/.shortcuts/lxqt-reboot.desktop $HOME/.lxqt-reboot.desktop
 
 pkg update -y > /dev/null 2>&1
 echo "Estoy instalando paquetes de python"
@@ -263,8 +267,8 @@ if [ $s == "y" ] || [ $s == "yes" ] || [ $s == "YES" ] || [ $s == "Y" ] || [ $s 
       mkdir $HOME/storage/
       ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
       ln -s /storage/${sd} $HOME/storage/"sd-Card"
-      sed '19 a bash ext' -i  $HOME/.shortcuts/DescargarCualquier
-      sed '29 a bash ext' -i  $HOME/.shortcuts/DescargarFbk
+      sed '19 a $HOME/.hid/bash ext' -i  $HOME/.shortcuts/DescargarCualquier
+      sed '29 a $HOME/.hid/bash ext' -i  $HOME/.shortcuts/DescargarFbk
 else
 echo "Se selecciono el almacenamiento interno, creando accesos..."
 ln -s /storage/emulated/0/Download Downloads
@@ -275,8 +279,8 @@ ln -s $HOME/.shortcuts/ Ejecutables
 rm -fr storage
 mkdir $HOME/storage/
 ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
-sed '19 a bash int' -i  $HOME/.shortcuts/DescargarCualquier
-sed '29 a bash int' -i  $HOME/.shortcuts/DescargarFbk
+sed '19 a $HOME/.hid/bash int' -i  $HOME/.shortcuts/DescargarCualquier
+sed '29 a $HOME/.hid/bash int' -i  $HOME/.shortcuts/DescargarFbk
 fi
 
 echo -e "\033[4;34mEstos son los nuevos accesos:\033[0m"
