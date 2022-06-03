@@ -25,10 +25,7 @@ ffmpeg -i $names -c:v libx264 -c:a aac "${name}.mp4" > /dev/null 2>&1
 rm $names
 echo -e "\033[0;35mPrecione una tecla para compartir\033[0m"
 read jj
-echo "Abriendo almacenamiento interno"
-am start -a android.intent.action.VIEW -d content://com.android.externalstorage.documents/document/D8B3-ACBF%3ADownload%2F
-am start -a android.intent.action.VIEW -d "content://com.android.externalstorage.documents/root/primary"
-termux-open --send $HOME/Downloads/"${name}.mp4"
+echo "Abriendo carpeta"
 echo "Precione una tecla para eliminar el video"
 read si
 rm $HOME/Downloads/"${name}.mp4"
