@@ -33,7 +33,9 @@ alias clw='sh $HOME/.shortcuts/clearWhatsapp'
 alias mpv='sh $HOME/.shortcuts/colorMpv && mpv'
 alias termuxmpv='sh $HOME/.shortcuts/colorMpv && termuxmpv'
 alias pof='history  -c && su -c "am broadcast android.intent.action.ACTION_SHUTDOWN && sleep 5 && reboot -p"'
-alias ext='am start -a android.intent.action.VIEW -d "content://com.android.externalstorage.documents/root/primary"'
+alias int='bash $HOME/.hid/int'
+alias ext='bash $HOME/.hid/ext'
+#alias =''
 
 # Handles nonexistent commands.
 # If user has entered command which invokes non-available
