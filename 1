@@ -267,8 +267,8 @@ if [ $s == "y" ] || [ $s == "yes" ] || [ $s == "YES" ] || [ $s == "Y" ] || [ $s 
       mkdir $HOME/storage/
       ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
       ln -s /storage/${sd} $HOME/storage/"sd-Card"
-      sed '19 a $HOME/.hid/bash ext' -i  $HOME/.shortcuts/DescargarCualquier
-      sed '29 a $HOME/.hid/bash ext' -i  $HOME/.shortcuts/DescargarFbk
+      sed '19 a bash $HOME/.hid/ext' -i  $HOME/.shortcuts/DescargarCualquier
+      sed '29 a bash $HOME/.hid/ext' -i  $HOME/.shortcuts/DescargarFbk
 else
 echo "Se selecciono el almacenamiento interno, creando accesos..."
 ln -s /storage/emulated/0/Download Downloads
@@ -279,8 +279,8 @@ ln -s $HOME/.shortcuts/ Ejecutables
 rm -fr storage
 mkdir $HOME/storage/
 ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
-sed '19 a $HOME/.hid/bash int' -i  $HOME/.shortcuts/DescargarCualquier
-sed '29 a $HOME/.hid/bash int' -i  $HOME/.shortcuts/DescargarFbk
+sed '19 a bash $HOME/.hid/int' -i  $HOME/.shortcuts/DescargarCualquier
+sed '29 a bash $HOME/.hid/int' -i  $HOME/.shortcuts/DescargarFbk
 fi
 
 echo -e "\033[4;34mEstos son los nuevos accesos:\033[0m"
