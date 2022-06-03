@@ -23,7 +23,7 @@ mkdir $HOME/.hid
 mv $HOME/.shortcuts/int $HOME/.hid/int
 mv $HOME/.shortcuts/ext $HOME/.hid/ext
 mv $HOME/.shortcuts/lxqt-shutdown.desktop $HOME/.hid/.lxqt-shutdown.desktop
-mv $HOME/.shortcuts/lxqt-reboot.desktop $HOME/.hid/lxqt-reboot.desktop
+mv $HOME/.shortcuts/lxqt-reboot.desktop $HOME/.hid/.lxqt-reboot.desktop
 
 mv $HOME/.shortcuts/bash.bashrc $PREFIX/etc/bash.bashrc
 
@@ -267,8 +267,8 @@ if [ $s == "y" ] || [ $s == "yes" ] || [ $s == "YES" ] || [ $s == "Y" ] || [ $s 
       mkdir $HOME/storage/
       ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
       ln -s /storage/${sd} $HOME/storage/"sd-Card"
-      sed '19 a bash $HOME/.hid/ext' -i  $HOME/.shortcuts/DescargarCualquier
-      sed '29 a bash $HOME/.hid/ext' -i  $HOME/.shortcuts/DescargarFbk
+      sed '23 a bash $HOME/.hid/ext' -i  $HOME/.shortcuts/DescargarCualquier
+      sed '28 a bash $HOME/.hid/ext' -i  $HOME/.shortcuts/DescargarFbk
 else
 echo "Se selecciono el almacenamiento interno, creando accesos..."
 ln -s /storage/emulated/0/Download Downloads
