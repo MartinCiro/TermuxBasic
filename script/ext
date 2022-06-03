@@ -1,0 +1,13 @@
+#!/bin/bash
+cd ~/.shortcuts/
+dfs=$(find . -type f | awk -F"/" '$NF ~ /^\..*$/ {print $NF}')
+oldIFS=$IFS     # conserva el separador de campo
+IFS=$'\n'     # nuevo separador de campo, el caracter fin de línea
+
+for line in $(cat $dfs)
+do
+  am start -a android.intent.action.VIEW -d content://com.android.externalstorage.documents/document/${line}%3ADownload%2F  > /dev/null 2>&1
+done
+IFS=$old_IFS
+echo "Finalizado"
+cd - > /dev/null 2>&1
