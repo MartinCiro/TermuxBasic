@@ -319,13 +319,30 @@ mv $HOME/mail-python/enviar.py $HOME/.shortcuts/
 rm -fr $HOME/mail-python
 $PREFIX/bin/python3 -m pip install --upgrade pip > /dev/null 2>&1
 clear
+rm -fr $HOME/termux-desktop-lxqt
+mv $HOME/.shortcuts/tmxW.apk $HOME/Downloads/
+mv $HOME/.shortcuts/start-desktop $PREFIX/bin/start-desktop
 
 echo -e "\033[0;31mEjecute nb para informacion de alias\033[0m"
 echo -e "Instale termux-widget para la ejecucion de scripts"
 echo -e "\033[0;36mScripts a editar:\nDescargarFbk (Correo y Facebook)\nEnvA.T (user)\nng (pass + user)\nEnvA.T (user)\nEnvA.Pc (pass + user)\nconectar (pass + user)\033[0m"
-rm -fr $HOME/termux-desktop-lxqt
-mv $HOME/.shortcuts/tmxW.apk $HOME/Downloads/
-mv $HOME/.shortcuts/start-desktop $PREFIX/bin/start-desktop
+echo "¿Configurar ahora? y/n"
+read ert
+if [ "$ert" == "y" ] || [ "$ert" == "yes" ] || [ "$ert" == "YES" ] || [ "$ert" == "Y" ] || [ "$ert" == "si" ] || [ "$ert" == "sí" ] || [ "$ert" == "SI" ] || [ "$ert" == "SÍ" ]; then
+clear
+echo "Configurando DescargarFbk"
+echo "Reemplazar correo y contraseña: "
+sleep 2
+clear
+echo "Ingrese el correo: "
+read cor
+read -p "Ingrese la contraseña: " pas
+sed -i "s/AquíCorreoFacebook/$cor/" $HOME/.shortcuts/DescargarFbk
+sed -i "s/AquíPassdeFacebook/$pas/" $HOME/.shortcuts/DescargarFbk
+echo ""
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar los scripts faltantes:\nEnvA.T (user)\nng (pass + user)\nEnvA.T (user)\nEnvA.Pc (pass + user)\nconectar (pass + user)\033[0m"
+fi
+
 echo -e "\033[1;31mFinalizado, recuerde instalar termux-api y VNC\033[0m"
 sleep 8
 exit
