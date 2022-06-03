@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=vncserver -kill :1
+Exec=stop-desktop
 Icon=system-shutdown
 Categories=System;X-Leave;
 OnlyShowIn=LXQt;
