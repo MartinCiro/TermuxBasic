@@ -242,6 +242,31 @@ cd $HOME
 mkdir temp
 unlink $HOME/Music
 rm -fr $HOME/Documents  $HOME/Downloads $HOME/Pictures  $HOME/Public  $HOME/Templates  $HOME/Video  $HOME/basic
+
+echo "¿Usar almacenamiento externo?"
+read s
+if [ $s == "y" ] || [ $s == "yes" ] || [ $s == "YES" ] || [ $s == "Y" ] || [ $s == "si" ] || [ $s == "sí" ] || [ $s == "SI" ] || [ $s == "SÍ" ]
+   then
+      echo -e "Se abrira el almacenamiento interno\n Por favor vea las propiedades de un archivo"
+      am start -a android.intent.action.VIEW -d "content://com.android.externalstorage.documents/root/primary"
+      echo -e "\033[1;31mCopie el Nombre de la SD-Card Aquí:\033[0m"
+      read sd
+      #D8B3-ACBF
+      echo "Se selecciono el almacenamiento externo: ${sd}"
+      echo -e "${sd}" >> ~/.shortcuts/.${sd}
+      ln -s /storage/${sd}/Download Downloads
+      ln -s /storage/${sd}/Movies Video
+      ln -s /storage/${sd}/Music Music
+      ln -s /storage/${sd}/Pictures Pictures
+      ln -s $HOME/.shortcuts/ ejecutables
+      rm -fr storage
+      mkdir $HOME/storage/
+      ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
+      ln -s /storage/${sd} $HOME/storage/"sd-Card"
+      sed '19 a bash ext' -i  $HOME/.shortcuts/DescargarCualquier
+      sed '29 a bash ext' -i  $HOME/.shortcuts/DescargarFbk
+else
+echo "Se selecciono el almacenamiento interno, creando accesos..."
 ln -s /storage/emulated/0/Download Downloads
 ln -s /storage/emulated/0/Movies Video
 ln -s /storage/emulated/0/Music Music
@@ -250,6 +275,10 @@ ln -s $HOME/.shortcuts/ Ejecutables
 rm -fr storage
 mkdir $HOME/storage/
 ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
+sed '19 a bash int' -i  $HOME/.shortcuts/DescargarCualquier
+sed '29 a bash int' -i  $HOME/.shortcuts/DescargarFbk
+fi
+
 echo -e "\033[4;34mEstos son los nuevos accesos:\033[0m"
 ls -n
 sleep 8
