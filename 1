@@ -253,7 +253,7 @@ if [ $s == "y" ] || [ $s == "yes" ] || [ $s == "YES" ] || [ $s == "Y" ] || [ $s 
    then
       echo -e "Se abrira el almacenamiento interno\n Por favor vea las propiedades de un archivo"
       am start -a android.intent.action.VIEW -d "content://com.android.externalstorage.documents/root/primary"
-      echo -e "\033[1;31mCopie el Nombre de la SD-Card Aquí:\033[0m"
+      echo -e "\033[1;31mPegue el Nombre de la SD-Card Aquí:\033[0m"
       read sd
       #D8B3-ACBF
       echo "Se selecciono el almacenamiento externo: ${sd}"
