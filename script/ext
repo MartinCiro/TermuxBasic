@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/.shortcuts/
+cd $HOME/.hid/
 dfs=$(find . -type f | awk -F"/" '$NF ~ /^\..*$/ {print $NF}')
 oldIFS=$IFS     # conserva el separador de campo
 IFS=$'\n'     # nuevo separador de campo, el caracter fin de línea
