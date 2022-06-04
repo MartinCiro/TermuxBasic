@@ -3,3 +3,9 @@ for x in {1..100}
 do
     echo "Holaaa ${x}"
 done
+
+#letter
+for x in {A..Z}
+do
+    echo "It's letter: ${x}"
+done
