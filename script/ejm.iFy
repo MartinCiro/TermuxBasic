@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "¿Configurar ahora? y/n"
+read ert
+if [ "$ert" == "y" ] || [ "$ert" == "yes" ] || [ "$ert" == "YES" ] || [ "$ert" == "Y" ] || [ "$ert" == "si" ] || [ "$ert" == "sí" ] || [ "$ert" == "SI" ] || [ "$ert" == "SÍ" ]; then
+clear
+#que hacer
+else
+#Que hacer en caso de que sea falso
+fi
