@@ -1,9 +1,11 @@
 #!/bin/bash
 clear
 sshd
+user=$(whoami)
 ip=$(ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 echo -e "\033[0;36mIP: ${ip}\033[0m"
-echo SSH server running.
-echo press Enter to terminate.
+echo -e "\033[0;36mUsuario: ${user}\033[0m"
+echo "Servidor SSH iniciado."
+echo "Presione Enter para terminar."
 read continue
 pkill sshd
