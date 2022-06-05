@@ -12,8 +12,9 @@ read rut
 echo "Conectando..."
 ssh-keygen -f "~/.ssh/known_hosts2" -R "[${b}]:8022"
 #Enviar archivos a pc
-sshpass -p PaSsWorD scp $rut UsEr@$b:/home/UsEr/
-scp $rut UsEr@$b:/home/UsEr/
-sshpass -p PaSsWorD scp $rut UsEr@$s.tcp.ngrok.io -p $p:/home/UsEr/
-scp $rut UsEr@$s.tcp.ngrok.io -p $p:/home/UsEr/
+user="UsEr"
+sshpass -p PaSsWorD scp $rut $user@$b:/home/$user/
+scp $rut $user@$b:/home/UsEr/
+sshpass -p PaSsWorD scp $rut $user@$s.tcp.ngrok.io -p $p:/home/$user/
+scp $rut UsEr@$s.tcp.ngrok.io -p $p:/home/$user/
 echo "\033[0;31mEnviado.\033[0m"
