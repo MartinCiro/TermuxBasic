@@ -35,6 +35,7 @@ alias termuxmpv='sh $HOME/.shortcuts/colorMpv && termuxmpv'
 alias pof='history  -c && su -c "am broadcast android.intent.action.ACTION_SHUTDOWN && sleep 5 && reboot -p"'
 alias int='bash $HOME/.hid/int'
 alias ext='bash $HOME/.hid/ext'
+alias conf='bash conf'
 #alias =''
 
 # Handles nonexistent commands.
