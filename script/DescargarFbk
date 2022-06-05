@@ -26,6 +26,7 @@ rm $names
 echo -e "\033[0;35mPrecione una tecla para compartir\033[0m"
 read jj
 echo "Abriendo carpeta"
+reemplazar2
 echo "Precione una tecla para eliminar el video"
 read si
 rm $HOME/Downloads/"${name}.mp4"
