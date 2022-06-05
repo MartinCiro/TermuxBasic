@@ -20,6 +20,7 @@ curl -o $names $URL
 ffmpeg -i $names -c:v libx264 -c:a aac "${name}.mp4"
 rm $names
 echo "Abriendo almacenamiento..."
+reemplazar
 termux-open --send "${name}.mp4"
 echo "Precione una tecla para eliminar el video"
 read si
