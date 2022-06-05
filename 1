@@ -358,7 +358,7 @@ read des
 sed -i "s/user/$des/" $HOME/.shortcuts/EnvA.T
 echo "Finalizado..."
 else
-echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts\033[0m"
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
 sleep 2
 clear
 fi
@@ -379,7 +379,7 @@ sed -i "s/NO@gmail.com/$rcoc/" $HOME/.shortcuts/enviar.py
 sed -i "s/passw/$rcocp/" $HOME/.shortcuts/enviar.py
 echo "Finalizado..."
 else
-echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts\033[0m"
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
 sleep 2
 clear
 fi
@@ -399,7 +399,7 @@ sed -i "s/UsEr/$udest/" $HOME/.shortcuts/ng
 sed -i "s/PasSwOrD/$pdest/" $HOME/.shortcuts/ng
 echo "Finalizado..."
 else
-echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts\033[0m"
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
 sleep 2
 clear
 fi
@@ -411,16 +411,15 @@ clear
 #que hacer
 echo "Es necesario ingresar la contraseña y el usuario (destino)"
 sleep 2
-clear
 echo "Ingrese el usuario del PC (destino): "
 read desp
 echo "Ingrese la contraseña del usuario del PC (destino): "
 read despp
 sed -i "s/UsEr/$desp/" $HOME/.shortcuts/EnvA.Pc
 sed -i "s/PaSsWorD/$despp/" $HOME/.shortcuts/EnvA.Pc
-echo "Finalizado..."
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
 else
-echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts\033[0m"
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
 sleep 2
 clear
 fi
@@ -428,27 +427,26 @@ fi
 echo "¿Configurar conectar con PC? y/n"
 read cpc
 if [ "$cpc" == "y" ] || [ "$cpc" == "yes" ] || [ "$cpc" == "YES" ] || [ "$cpc" == "Y" ] || [ "$cpc" == "si" ] || [ "$cpc" == "sí" ] || [ "$cpc" == "SI" ] || [ "$cpc" == "SÍ" ]; then
-clear
 echo "Ingrese el usuario y contraseña de PC (destino):"
 sleep 2
-clear
 echo "Ingrese el usuario de PC (destino): "
 read usPC
 echo "Ingrese la contraseña del usuario de PC (destino): "
 read usPCp
 sed -i "s/user/$usPC/" $HOME/.shortcuts/conectar
 sed -i "s/user/$usPCp/" $HOME/.shortcuts/conectar
-echo "Ajuste de scripts Finalizados/actualizados"
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
+clear
 else
-echo "\033[0;36mFinalizado, en cualquier momento puede editar este scripts\033[0m"
+echo "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
 sleep 2
 clear
 fi
 else
-echo -e "\033[0;36mFinalizado, en cualquier momento puede editar los scripts faltantes:\nEnvA.T (user)\nng (pass + user)\nEnvA.T (user)\nnEnvA.Pc (pass + user)\nconectar (pass + user)\033[0m"
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar los scripts faltantes ejecutando el alias CONF:\nEnvA.T (user)\nng (pass + user)\nEnvA.T (user)\nnEnvA.Pc (pass + user)\nconectar (pass + user)\033[0m"
 fi
 else
-echo -e "\033[0;36mFinalizado, en cualquier momento puede editar los scripts faltantes:\nEnvA.T (user)\nng (pass + user)\nEnvA.T (user)\nEnvA.Pc (pass + user)\nconectar (pass + user)\033[0m"
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar los scripts faltantes ejecutando el alias CONF:\nEnvA.T (user)\nng (pass + user)\nEnvA.T (user)\nEnvA.Pc (pass + user)\nconectar (pass + user)\033[0m"
 fi
 echo -e "\033[1;31mFinalizado, recuerde instalar termux-api y VNC\033[0m"
 sleep 8
