@@ -115,7 +115,7 @@ sed -i "s/user/$usPCp/" $HOME/.shortcuts/conectar
 echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
 clear
 else
-echo "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
 sleep 2
 clear
 fi
