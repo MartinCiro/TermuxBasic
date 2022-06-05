@@ -327,10 +327,14 @@ mv $HOME/.shortcuts/start-desktop $PREFIX/bin/start-desktop
 echo -e "\033[0;31mEjecute nb para informacion de alias\033[0m"
 echo -e "Instale termux-widget para la ejecucion de scripts"
 echo -e "\033[0;36mScripts a editar:\nDescargarFbk (Correo y Facebook)\nEnvA.T (user)\nng (pass + user)\nEnvA.T (user)\nEnvA.Pc (pass + user)\nconectar (pass + user)\033[0m"
-echo "¿Configurar ahora? y/n"
-read ert
-if [ "$ert" == "y" ] || [ "$ert" == "yes" ] || [ "$ert" == "YES" ] || [ "$ert" == "Y" ] || [ "$ert" == "si" ] || [ "$ert" == "sí" ] || [ "$ert" == "SI" ] || [ "$ert" == "SÍ" ]; then
+echo "¿Empezar configuracion?"
+read cont
+if [ "$cont" == "y" ] || [ "$cont" == "yes" ] || [ "$cont" == "YES" ] || [ "$cont" == "Y" ] || [ "$cont" == "si" ] || [ "$cont" == "sí" ] || [ "$cont" == "SI" ] || [ "$cont" == "SÍ" ]; then
+
+echo "¿Configurar script de descarga videos de facebook? y/n"
+read yfb
 clear
+if [ "$yfb" == "y" ] || [ "$yfb" == "yes" ] || [ "$yfb" == "YES" ] || [ "$yfb" == "Y" ] || [ "$yfb" == "si" ] || [ "$yfb" == "sí" ] || [ "$yfb" == "SI" ] || [ "$yfb" == "SÍ" ]; then
 echo "Configurando script de descarga videos de facebook"
 echo "Reemplazar correo y contraseña: "
 sleep 2
@@ -339,11 +343,12 @@ read cor
 read -p "Ingrese la contraseña: " pas
 sed -i "s/AquíCorreoFacebook/$cor/" $HOME/.shortcuts/DescargarFbk
 sed -i "s/AquíPassdeFacebook/$pas/" $HOME/.shortcuts/DescargarFbk
+echo "Finalizado..."
+else
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
+sleep 2
 clear
-echo "¿Continuar configuracion?"
-read cont
-
-if [ "$cont" == "y" ] || [ "$cont" == "yes" ] || [ "$cont" == "YES" ] || [ "$cont" == "Y" ] || [ "$cont" == "si" ] || [ "$cont" == "sí" ] || [ "$cont" == "SI" ] || [ "$cont" == "SÍ" ]; then
+fi
 
 echo "¿Configurar Enviar archivos a termux? y/n"
 read sit
@@ -438,16 +443,14 @@ sed -i "s/user/$usPCp/" $HOME/.shortcuts/conectar
 echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
 clear
 else
-echo "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
+echo -e "\033[0;36mFinalizado, en cualquier momento puede editar este scripts ejecutando el alias CONF\033[0m"
 sleep 2
 clear
 fi
 else
 echo -e "\033[0;36mFinalizado, en cualquier momento puede editar los scripts faltantes ejecutando el alias CONF:\nEnvA.T (user)\nng (pass + user)\nEnvA.T (user)\nnEnvA.Pc (pass + user)\nconectar (pass + user)\033[0m"
 fi
-else
-echo -e "\033[0;36mFinalizado, en cualquier momento puede editar los scripts faltantes ejecutando el alias CONF:\nEnvA.T (user)\nng (pass + user)\nEnvA.T (user)\nEnvA.Pc (pass + user)\nconectar (pass + user)\033[0m"
-fi
+
 echo -e "\033[1;31mFinalizado, recuerde instalar termux-api y VNC\033[0m"
 sleep 8
 cd $HOME
