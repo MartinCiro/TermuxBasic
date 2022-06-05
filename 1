@@ -364,6 +364,27 @@ sleep 2
 clear
 fi
 
+echo "¿Configurar redactar correo? y/n"
+read rco
+if [ "$rco" == "y" ] || [ "$rco" == "yes" ] || [ "$rco" == "YES" ] || [ "$rco" == "Y" ] || [ "$rco" == "si" ] || [ "$rco" == "sí" ] || [ "$rco" == "SI" ] || [ "$rco" == "SÍ" ]; then
+clear
+#que hacer
+echo "Reemplazar correo y contraseña:"
+sleep 2
+clear
+echo "Ingrese el correo electronico:"
+read rcoc
+echo "Ingrese la contraseña del correo electronico:"
+read rcocp
+sed -i "s/NO@gmail.com/$rcoc/" $HOME/.shortcuts/enviar.py
+sed -i "s/passw/$rcocp/" $HOME/.shortcuts/enviar.py
+echo "Finalizado..."
+else
+echo "\033[0;36mFinalizado, en cualquier momento puede editar este scripts\033[0m"
+sleep 2
+clear
+fi
+
 echo "¿Configurar conectar con ngrok? y/n"
 read sit
 if [ "$sit" == "y" ] || [ "$sit" == "yes" ] || [ "$sit" == "YES" ] || [ "$sit" == "Y" ] || [ "$sit" == "si" ] || [ "$sit" == "sí" ]  || [ "$sit" == "SI" ] || [ "$sit" == "SÍ" ]; then
