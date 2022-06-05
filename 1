@@ -267,6 +267,7 @@ if [ "$s" == "y" ] || [ "$s" == "yes" ] || [ "$s" == "YES" ] || [ "$s" == "Y" ] 
       mkdir $HOME/storage/
       ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
       ln -s /storage/${sd} $HOME/storage/"sd-Card"
+      sed -i "s/remp/$sd/" $HOME/.hid/ext
       sed '23 a bash $HOME/.hid/ext' -i  $HOME/.shortcuts/DescargarCualquier
       sed '28 a bash $HOME/.hid/ext' -i  $HOME/.shortcuts/DescargarFbk
 else
