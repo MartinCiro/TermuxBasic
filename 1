@@ -252,7 +252,7 @@ read s
 if [ "$s" == "y" ] || [ "$s" == "yes" ] || [ "$s" == "YES" ] || [ "$s" == "Y" ] || [ "$s" == "si" ] || [ "$s" == "sí" ] || [ "$s" == "SI" ] || [ "$s" == "SÍ" ]
    then
       echo -e "Se abrira el almacenamiento interno\n Por favor vea las propiedades de un archivo"
-      am start -a android.intent.action.VIEW -d "content://com.android.externalstorage.documents/root/primary"
+      am start -a android.intent.action.VIEW -d "content://com.android.externalstorage.documents/root/primary" > /dev/null 2>&1
       echo -e "\033[1;31mPegue el Nombre de la SD-Card Aquí:\033[0m"
       read sd
       #D8B3-ACBF
