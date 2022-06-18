@@ -1,6 +1,5 @@
 #!/bin/bash
 cd $HOME/Downloads
-#cd $HOME/storage/downloads
 echo "Dame el URL"
 read URL
 echo "Para conservar precione m"
@@ -18,6 +17,7 @@ names=$name$ext
 curl -o $names $URL
 #ffmpeg -i $names -codec copy "${name}.mp4"
 ffmpeg -i $names -c:v libx264 -c:a aac "${name}.mp4"
+yt-dlp -f b $URL -o $names > /dev/null 2>&1
 rm $names
 echo "Abriendo almacenamiento..."
 reemplazar
