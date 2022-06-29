@@ -12,7 +12,7 @@
 #White='\033[0;37m'
 cd $HOME/
 echo -e "\033[0;34mInstalando programas por favor espera...\033[0m"
-pkg install mlocate wget openssl iproute2 proot resolv-conf python git nano net-tools procps clang libxml2 openssh binutils openssh sshpass termux-api mpv android-tools openjdk-17 libtool neofetch python-tkinter libxslt -y > /dev/null 2>&1
+pkg install termux-services cronie mlocate wget openssl iproute2 proot resolv-conf python git nano net-tools procps clang libxml2 openssh binutils openssh sshpass termux-api mpv android-tools openjdk-17 libtool neofetch python-tkinter libxslt -y > /dev/null 2>&1
 updatedb
 
 mkdir $HOME/.shortcuts
@@ -283,6 +283,10 @@ ln -s /storage/emulated/0 $HOME/storage/"almacenamiento-Interno"
 sed '19 a bash $HOME/.hid/int' -i  $HOME/.shortcuts/DescargarCualquier
 sed '29 a bash $HOME/.hid/int' -i  $HOME/.shortcuts/DescargarFbk
 fi
+
+sed '12 a export EDITOR=nano' -i  $PREFIX/etc/bash.bashrc
+pidof crond
+sv-enable crond
 
 echo -e "\033[4;34mEstos son los nuevos accesos:\033[0m"
 ls -n
